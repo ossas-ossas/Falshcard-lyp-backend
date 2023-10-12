@@ -1,0 +1,17 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Self report</h2>
+        <div><pre>{{data}}</pre></div>
+        <form action="/report_result" method="post">
+            correct or not(y or n):</br>
+            <label>Yes</label>                    
+            <input  name="correct_or_not" value="y" type="radio">                    
+            <label>No</label>                    
+            <input name="correct_or_not" value="n" type="radio"></br>
+            <input type="submit" value="Guess">
+        </form>
+    </body>
+</html>

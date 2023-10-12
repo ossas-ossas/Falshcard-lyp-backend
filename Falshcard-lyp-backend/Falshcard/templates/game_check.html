@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Play Game</h2>
+        <pre>
+            {{notice}}
+        </pre>
+        <pre>
+            {{grid}}
+        </pre>
+        <form action="/game_check" method="post">
+            Try to find the match!:<input type="text" name="choice2"><br>
+            <input type="submit" value="Check">
+        </form>
+        <div>{{message}}</div>
+    </body>
+</html>

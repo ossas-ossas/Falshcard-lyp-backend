@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <pre>
+                    Welcome to
+
+            ^_^   Flashcards   ^_^
+        </pre>
+        <H2>
+            Please choose a deck:
+        </H2>
+        {% for deck in decks_choice_display %}
+        <div>
+            <a href="/deck_choice/{{deck.id}}">{{ deck.id }}) {{ deck.name }}</a>
+        </div>
+        {% endfor %}
+        
+    </body>
+</html>

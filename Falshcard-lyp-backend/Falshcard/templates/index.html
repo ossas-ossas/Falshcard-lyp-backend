@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Flashcard App</h2>
+
+<p><strong>Question:</strong> {{ question }}</p>
+
+<form id="answerForm">
+    {% for choice in choices %}
+        <input type="radio" name="choice" value="{{ choice }}">{{ choice }}<br>
+    {% endfor %}
+    <input type="submit" value="Check Answer">
+</form>
+
+<p id="result"></p>
+
+<script>
+    $("#answerForm").submit(function(event){
+        event.preventDefault();
+        let formData = $(this).serialize();
+        $.post("/check_answer", formData, function(data){
+            if(data.is_correct){
+                $("#result").text("Correct! The answer is: " + data.correct_answer);
+            } else {
+                $("#result").text("Incorrect! The correct answer is: " + data.correct_answer);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

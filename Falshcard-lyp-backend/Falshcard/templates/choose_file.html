@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Import and convert decks</h2>
+        <form action="/check_default" method="post">
+            <div>Please choose a file</div>
+            {% for name_path_tup in numbered_paths_and_names1 %}
+            <div>                 
+                <input name="file_choice" value="{{ loop.index }}" type="radio">
+                <label>{{name_path_tup[0]}} {{name_path_tup[1]}}</label>   
+            </div>
+            {% endfor %}
+            <div> --- </div>
+            <div>Is the file a Quizlet export or in the Quizlet export format?</div>
+            <div>
+                <input name="is_quizlet" value="y" type="radio">
+                <label>Yes</label>                    
+            </div>
+            <div>
+                <input name="is_quizlet" value="n" type="radio">
+                <label>No</label>                    
+            </div>
+            <input type="submit" value="Confirm">
+        </form>
+    </body>
+</html>

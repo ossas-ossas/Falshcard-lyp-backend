@@ -1,0 +1,8 @@
+<h2>Select Flashcards</h2>
+
+<form action="/add_to_base" method="post">
+    {% for card in flashcards %}
+    <input type="checkbox" name="selected" value="{{ card.id }}"> {{ card.question }}<br>
+    {% endfor %}
+    <input type="submit" value="Start Quiz">
+</form>

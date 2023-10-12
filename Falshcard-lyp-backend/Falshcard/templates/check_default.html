@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Import and convert decks</h2>
+        <form action="/confirm_exist" method="post">
+            <div>Did you export using the default Quizlet export?</div>
+            <div>Separating cards with spaces and card front and backs with tabs?</div>
+            <div>
+                <label>Yes</label>                    
+                <input name="is_default" value="y" type="radio">
+            </div>
+            <div>
+                <label>No</label>                    
+                <input name="is_default" value="n" type="radio">
+            </div>
+            <input type="submit" value="Confirm">
+        </form>
+    </body>
+</html>

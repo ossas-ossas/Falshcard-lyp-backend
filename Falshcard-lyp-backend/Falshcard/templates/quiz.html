@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+<body>
+    <div class="flashcard-container">
+        <div class="flashcard">
+            <form method="post" action="/guess">
+                <div class="question">
+                    {{ flashcard.question }}
+                </div>
+                <div class="photo-area">
+                    <!-- 这里添加图片  -->
+                </div>
+                <div class="choices">
+                    {% for i in range(0, flashcard.choices|length, 2) %}
+                    <div class="choice-row">
+                        <div class="choice-card">
+                            <label>
+                                <input type="radio" name="choice" value="{{ flashcard.choices[i] }}" required>
+                                {{ flashcard.choices[i] }}
+                            </label>
+                        </div>
+                        {% if i + 1 < flashcard.choices|length %}
+                        <div class="choice-card">
+                            <label>
+                                <input type="radio" name="choice" value="{{ flashcard.choices[i+1] }}" required>
+                                {{ flashcard.choices[i+1] }}
+                            </label>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const colors = ['#E57373', '#F06292', '#BA68C8', '#9575CD', '#7986CB', '#64B5F6', '#4FC3F7', '#4DD0E1', '#4DB6AC', '#81C784', '#AED581', '#FFD54F', '#FFB74D', '#FF8A65', '#A1887F', '#90A4AE'];
+        const flashcard = document.querySelector('.flashcard');
+        flashcard.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2><pre>{{message}}</pre></h2>
+        <div> count down: <span id="count_down"> </span> </div>
+    </body>
+    
+    <script type="text/javascript">
+        var hrefs = "{{ href }}"
+        var time = 3
+        var box = document.querySelector('#count_down')
+        getTime()
+        setInterval(getTime, 1000)
+        function getTime() {
+            console.log(time)
+            if (time == 0) {
+                window.location.href=hrefs
+            } else {
+                box.innerHTML = time + 's'
+            }
+            time--
+        }
+    </script>
+</html>

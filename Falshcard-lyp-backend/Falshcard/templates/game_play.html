@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Play Game</h2>
+        <pre>
+            {{notice}}
+        </pre>
+        <pre>
+            {{grid}}
+        </pre>
+        <form action="/game_play" method="post">
+            Please pick a card to turn over:<input type="text" name="choice1" value="{{value}}"><br>
+            <input type="submit" value="Select">
+        </form>
+        <div>{{message}}</div>
+    </body>
+</html>

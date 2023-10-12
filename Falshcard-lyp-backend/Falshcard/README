@@ -1,0 +1,15 @@
+The current flashcard code
+After running app.py obtaining the URL and clicking on the URL, a pop-up page will appear with three optional links: Create FlashCard, Start quiz, and main. 
+The first two are written by YiFAN and have the function of adding and deleting question banks, can answer questions, and have UI design, and the last one is written by ZetaoHU. 
+At this stage, the flashcard has been conceived and ensured to run. In the next stage, merging, UI addition, and possible new features will be carried out.
+main ->choose deck ->1. view deck
+                     2. add item
+                     3. delete item
+                     4. quiz youreself -> multipule choice/write answer/ self report
+                     5. play game         
+                     6. switch deck
+                     7. back
+Upload: The merge of flashcard has been completed on September 28th. Changes:
+  	 	1. Change adding questions to adding questions and multiple-choice answers
+      2. Storage format is csv
+      3. Click the multiple-choice question to start answering and display part of the UI that has been designed.
